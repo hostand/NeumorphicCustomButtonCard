@@ -81,7 +81,81 @@ When my old washing machine starts it shakes a lot. Let's do it on lovelace.
 
 ## Pulse style
 
-![heat](shake.gif)
+![heat](heat.gif)
 
 When my radiators start to heat I like to show a pulse effect like a fireplace.
 
+
+```yaml
+        type: custom:button-card
+entity: sensor.qtd_radiator_heating
+name: Radiador
+extra_styles: |
+  @keyframes shadow-drop-2-center {
+   0% {
+     -webkit-transform: translateZ(0);
+             transform: translateZ(0);
+     -webkit-box-shadow: 0 0 0 0 rgba(255, 165, 0, 0);
+             box-shadow: 0 0 0 0 rgba(255, 165, 0, 0);
+   }
+   100% {
+     -webkit-transform: translateZ(50px);
+             transform: translateZ(50px);
+     -webkit-box-shadow: 0 0 20px 0px rgba(255, 165, 0, 0.35);
+             box-shadow: 0 0 20px 0px rgba(255, 165, 0, 0.35);
+    }
+  }
+show_state: false
+show_label: true
+label: |
+  [[[ return entity.state; ]]]
+styles:
+  card:
+    - height: 100px
+    - width: 126px
+    - animation: |
+        [[[
+          if (entity.state == 0) return '';
+         else return 'shadow-drop-2-center 1s ease-out infinite alternate both';
+        ]]]
+  grid:
+    - grid-template-areas: '"i" "n" "s"'
+    - grid-template-columns: 1fr
+    - grid-template-rows: 1fr min-content
+  img_cell:
+    - align-self: start
+    - text-align: start
+  label:
+    - border-radius: 90%
+    - background-color: |
+        [[[
+          if (entity.state == 0) return 'green';
+         else return 'orange';
+        ]]]
+    - justify-self: end
+    - width: 20px
+    - font-size: 15px
+    - margin-top: '-150px'
+    - margin-right: 10px
+    - color: |
+        [[[
+          if (entity.state == 0) return 'white';
+         else return 'black';
+        ]]]
+  name:
+    - justify-self: start
+    - padding-left: 10px
+    - font-size: 19px
+    - margin-bottom: 4px
+  state:
+    - justify-self: start
+    - padding-left: 10px
+    - font-size: 15px
+    - margin-bottom: 4px
+  icon:
+    - width: 31px
+    - color: white
+    - margin-left: '-24px'
+    - margin-top: '-10px'
+
+```
