@@ -10,6 +10,7 @@ What do I need?
   - [Custom Button Card](https://github.com/custom-cards/button-card) - to style our card buttons on lovelace dashboard
 
 I will consider that you know how to use custom button card in an advanced way.
+So, thats it! If you like it just add me here and give some ⭐ to this project.
 
 ## Shaking style
 
@@ -77,3 +78,10 @@ When my old washing machine starts it shakes a lot. Let's do it on lovelace.
         if (entity.state == 'Washing') return 'vibrate-2 0.3s linear infinite both';
         ]]]
 ```
+
+## Pulse style
+
+![heat](shake.gif)
+
+When my radiators start to heat I like to show a pulse effect like a fireplace.
+
