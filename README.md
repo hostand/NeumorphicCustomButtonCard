@@ -1,5 +1,5 @@
 # NeumorphicCustomButtonCard
-Neumorphism (or Neo-skeuomorphism) is a modern iteration of a style of designing web elements, frames, screens, etc. So, why not using it on Home Assistant Lovelace Cards? Let's do it.
+Neumorphism (or Neo-skeuomorphism) is a modern iteration of a style of designing web elements, frames, screens, etc. So, why not using it on Home Assistant Lovelace Cards? Basically I use the extra_styles and animation properties of the custom button card to make this happen.
 
 ## Before start
 
@@ -12,3 +12,5 @@ What do I need?
 ## Shaking style
 
 ![shaking](shake.gif)
+
+When my old washing machine starts it shakes a lot. Let's do it on lovelace.
